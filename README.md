@@ -6,9 +6,9 @@
 
 <!-- </h1> -->
 
-<h2 align="center">cra-2020-template</h2>
+<h2 align="center">SpaceX launches</h2>
 
-<h3 align="center"> Linter + Prettier + Husky</h3>
+<h3 align="center">GraphQL + Apllo</h3>
 
 <!-- <p align="center">
   <a >
@@ -21,16 +21,14 @@
 
 <br>
 
-<!-- ### Tech/framework used 🔧
+| Main Tech | React                                 |
+| --------- | ------------------------------------- |
+| Addons    | Apollo                                |
+| API       | https://api.spacex.land/graphql/      |
+| Styles    | Styled Components, Material-UI        |
+| Code      | ES6, Hooks, PropTypes, Linter(airbnb) |
 
-| Main Tech | React                                  |
-| --------- | -------------------------------------- |
-| Addons    | Router, Redux, Thunk, Formik           |
-| Backend   | Firebase                               |
-| Styles    | Styled Components, Theming, Flex, Grid |
-| Code      | ES6, Hooks, PropTypes, Linter(airbnb)  |
-
-## Screenshots 📺
+<!-- ## Screenshots 📺
 
 <p align="center">
     <img src="" alt="Screenshot">
@@ -46,7 +44,7 @@
 
 ### Code Example/Issues 🔍
 
-### Installation 💾 -->
+### Installation 💾 --> -->
 
 ### Scripts
 
