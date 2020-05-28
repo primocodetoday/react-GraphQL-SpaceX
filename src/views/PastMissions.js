@@ -1,19 +1,28 @@
 ﻿import React from 'react';
-import styled from 'styled-components';
-import PastMissionsContainer from '../containers/PastMissionsContainer';
-import Header from '../components/molecules/Header';
+import { useQuery } from '@apollo/react-hooks';
+import { Grid } from '@material-ui/core';
+import { GET_PAST_MISSIONS } from '../graphql/get-past-missions';
+import MissionCard from '../components/molecules/MissionCard';
 
-const StyledWrapper = styled.main`
-  padding: 0 20px;
-  display: flex;
-  flex-direction: column;
-`;
+const PastMissions = () => {
+  const { data: { launchesPast = [] } = {} } = useQuery(GET_PAST_MISSIONS, {
+    variables: { limit: 12 },
+  });
 
-const PastMissions = () => (
-  <StyledWrapper>
-    <Header />
-    <PastMissionsContainer />
-  </StyledWrapper>
-);
+  return (
+    <Grid
+      container
+      spacing={4}
+      direction="row"
+      justify="center"
+      alignItems="stretch"
+    >
+      {launchesPast &&
+        launchesPast.map((launch) => (
+          <MissionCard key={launch.id} launch={launch} />
+        ))}
+    </Grid>
+  );
+};
 
 export default PastMissions;

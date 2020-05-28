@@ -1,8 +1,8 @@
 ﻿import gql from 'graphql-tag';
 
-export const GET_PAST_MISSIONS = gql`
-  query getPast($limit: Int!) {
-    launchesPast(limit: $limit) {
+export const GET_INCOMING_MISSIONS = gql`
+  query getUpcoming($limit: Int!) {
+    launchesUpcoming(limit: $limit) {
       id
       mission_name
       details
