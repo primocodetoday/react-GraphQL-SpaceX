@@ -1,8 +1,10 @@
 ﻿import React from 'react';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
-import { Container } from '@material-ui/core';
-import MissionsContainer from '../containers/MissionsContainer';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import PastMissions from './PastMissions';
+import IncomingMissions from './IncomingMissions';
+import MissionTemplate from '../templates/MissionTemplate';
 
 const Root = () => {
   const client = new ApolloClient({
@@ -10,9 +12,18 @@ const Root = () => {
   });
   return (
     <ApolloProvider client={client}>
-      <Container>
-        <MissionsContainer />
-      </Container>
+      <BrowserRouter>
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={() => <Redirect to="/pastmissions" />}
+          />
+          <Route exact path="/pastmissions" component={PastMissions} />
+          <Route path="/mission:id" component={MissionTemplate} />
+          <Route path="/incomingmissions" component={IncomingMissions} />
+        </Switch>
+      </BrowserRouter>
     </ApolloProvider>
   );
 };

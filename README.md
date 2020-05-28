@@ -8,7 +8,7 @@
 
 <h2 align="center">SpaceX launches</h2>
 
-<h3 align="center">GraphQL + Apllo</h3>
+<h3 align="center">GraphQL + Apollo</h3>
 
 <!-- <p align="center">
   <a >

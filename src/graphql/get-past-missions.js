@@ -1,6 +1,6 @@
 ﻿import gql from 'graphql-tag';
 
-export const GET_MISSIONS = gql`
+export const GET_PAST_MISSIONS = gql`
   query launchesPast($limit: Int!) {
     launchesPast(limit: $limit) {
       id
