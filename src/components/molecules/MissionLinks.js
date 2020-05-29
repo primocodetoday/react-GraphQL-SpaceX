@@ -21,7 +21,7 @@ const LinksSection = styled.div`
 `;
 const MissionLinks = ({ links }) => (
   <LinksSection>
-    {links.article_link ? (
+    {links.article_link && (
       <Chip
         icon={<DescriptionIcon />}
         component="a"
@@ -30,10 +30,8 @@ const MissionLinks = ({ links }) => (
         variant="outlined"
         target="_blank"
       />
-    ) : (
-      <Chip icon={<DescriptionIcon />} label="No Article" variant="outlined" />
     )}
-    {links.video_link ? (
+    {links.video_link && (
       <Chip
         icon={<YouTubeIcon />}
         component="a"
@@ -42,10 +40,8 @@ const MissionLinks = ({ links }) => (
         label="Video"
         variant="outlined"
       />
-    ) : (
-      <Chip icon={<YouTubeIcon />} label="No Video" variant="outlined" />
     )}
-    {links.reddit_campaign ? (
+    {links.reddit_campaign && (
       <Chip
         icon={<RedditIcon />}
         component="a"
@@ -54,10 +50,8 @@ const MissionLinks = ({ links }) => (
         label="Reddit"
         variant="outlined"
       />
-    ) : (
-      <Chip icon={<RedditIcon />} label="No Reddit" variant="outlined" />
     )}
-    {links.wikipedia ? (
+    {links.wikipedia && (
       <Chip
         icon={<MenuBookIcon />}
         component="a"
@@ -66,8 +60,6 @@ const MissionLinks = ({ links }) => (
         label="Wikipedia"
         variant="outlined"
       />
-    ) : (
-      <Chip icon={<MenuBookIcon />} label="No Wikipedia" variant="outlined" />
     )}
   </LinksSection>
 );

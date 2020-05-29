@@ -63,22 +63,14 @@ const MissionCard = ({ launch }) => {
           </CardContent>
         </CardActionArea>
         <CardActions>
-          {links.article_link ? (
+          {links.article_link && (
             <Button color="primary" target="_blank" href={links.article_link}>
               Article
             </Button>
-          ) : (
-            <Button disabled size="small" color="primary" target="_blank">
-              No Article
-            </Button>
           )}
-          {links.video_link ? (
+          {links.video_link && (
             <Button color="primary" target="_blank" href={links.video_link}>
               Video
-            </Button>
-          ) : (
-            <Button disabled size="small" color="primary" target="_blank">
-              No Video
             </Button>
           )}
         </CardActions>

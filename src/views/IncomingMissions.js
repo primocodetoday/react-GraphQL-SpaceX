@@ -13,13 +13,7 @@ const IncomingMissions = () => {
   );
 
   return (
-    <Grid
-      container
-      spacing={4}
-      direction="row"
-      justify="center"
-      alignItems="stretch"
-    >
+    <Grid container spacing={4} direction="row" justify="center">
       {launchesUpcoming &&
         launchesUpcoming.map((launch) => (
           <MissionCard key={launch.id} launch={launch} />
