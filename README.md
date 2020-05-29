@@ -53,7 +53,8 @@
 | `npm run start` | Open local server      |
 | `npm run build` | Create optimized build |
 
-<!-- ### Live 📍
+### Live 📍
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8a4d9c07-836f-40f0-ad49-bcc57a5bd294/deploy-status)](https://spacex-graphql-react.netlify.app/)
 
-### License 🔱 -->
+<!-- ### License 🔱 -->
