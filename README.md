@@ -23,7 +23,7 @@
 
 | Main Tech | React                                 |
 | --------- | ------------------------------------- |
-| Addons    | Apollo                                |
+| Addons    | Apollo, Router, Moment                |
 | API       | https://api.spacex.land/graphql/      |
 | Styles    | Styled Components, Material-UI        |
 | Code      | ES6, Hooks, PropTypes, Linter(airbnb) |

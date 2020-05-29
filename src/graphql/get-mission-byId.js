@@ -7,7 +7,6 @@ export const GET_MISSION_BYID = gql`
       links {
         article_link
         mission_patch_small
-        presskit
         reddit_campaign
         video_link
         wikipedia
@@ -16,7 +15,6 @@ export const GET_MISSION_BYID = gql`
       mission_name
       rocket {
         rocket_name
-        rocket_type
       }
     }
   }

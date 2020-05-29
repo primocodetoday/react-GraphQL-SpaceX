@@ -50,8 +50,8 @@ const MissionCard = ({ launch }) => {
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
-              {missionName.length > 30
-                ? `${missionName.substring(0, 30)}...`
+              {missionName.length > 25
+                ? `${missionName.substring(0, 25)}...`
                 : missionName}
             </Typography>
             <Typography variant="body1" color="primary" component="p">

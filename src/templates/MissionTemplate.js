@@ -1,23 +1,56 @@
 ﻿import React from 'react';
 import styled from 'styled-components';
 import moment from 'moment';
-import { Card, Typography } from '@material-ui/core';
+import { Card, Typography, Grid } from '@material-ui/core';
 import { useQuery } from '@apollo/react-hooks';
+import MissionLinks from '../components/molecules/MissionLinks';
 import { GET_MISSION_BYID } from '../graphql/get-mission-byId';
+import spaceX from '../assets/spacex_wall.webp';
 
 const StyledWrapper = styled(Card)`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   color: white;
-  padding: 20px;
+  padding: 10px;
 `;
 
-const Badge = styled.img`
-  max-width: 200px;
-  height: auto;
+const TopSection = styled.div`
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
+`;
+
+const BottomSection = styled(Grid)`
   padding: 20px;
+
+  img {
+    width: 100%;
+    border-radius: 10px;
+  }
+`;
+
+const BadgeSection = styled.section`
+  padding: 20px;
+  width: 250px;
+  flex-shrink: 0;
+
+  img {
+    width: 100%;
+  }
+`;
+
+const InfoSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+
+  @media (max-width: 900px) {
+    align-items: center;
+  }
 `;
 
 const MissionTemplate = (ownProps) => {
@@ -37,17 +70,52 @@ const MissionTemplate = (ownProps) => {
 
   return (
     <StyledWrapper>
-      <Badge src={links && links.mission_patch_small} alt="mission badge" />
-      <Typography variant="h4" component="h4">
-        Mission: {missionName}
-      </Typography>
-      <Typography gutterBottom>
-        Rocket: {rocket && rocket.rocket_name}
-      </Typography>
-      <Typography gutterBottom>
-        Launch: {moment(launchDateUtc).format('MMMM Do YYYY, h:mm:ss a')}
-      </Typography>
-      <Typography gutterBottom>{details}</Typography>
+      <TopSection>
+        <BadgeSection>
+          {links && (
+            <img
+              src={links.mission_patch_small || spaceX}
+              alt="mission badge"
+            />
+          )}
+        </BadgeSection>
+        <InfoSection>
+          <Typography align="center" variant="h4" component="h4" paragraph>
+            Mission: {missionName}
+          </Typography>
+          <Typography
+            align="center"
+            variant="subtitle1"
+            gutterBottom
+            component="p"
+          >
+            Rocket: <strong>{rocket && rocket.rocket_name}</strong>
+          </Typography>
+          <Typography align="center" gutterBottom component="p" paragraph>
+            Launch:
+            <strong>{` ${moment(launchDateUtc).format(
+              'MMMM Do YYYY, h:mm:ss',
+            )} UTC`}</strong>
+          </Typography>
+          <Typography
+            align="justify"
+            gutterBottom
+            component="article"
+            paragraph
+          >
+            Info: {details || `SpaceX has not yet completed this information`}
+          </Typography>
+          {links && <MissionLinks links={links} />}
+        </InfoSection>
+      </TopSection>
+      <BottomSection container justify="center" spacing={3}>
+        {links &&
+          links.flickr_images.map((image) => (
+            <Grid item md={6} xs={12} key={image}>
+              <img src={image} alt="launch" />
+            </Grid>
+          ))}
+      </BottomSection>
     </StyledWrapper>
   );
 };
