@@ -80,18 +80,13 @@ const MissionTemplate = (ownProps) => {
           )}
         </BadgeSection>
         <InfoSection>
-          <Typography align="center" variant="h4" component="h4" paragraph>
+          <Typography variant="h4" component="h4" paragraph>
             Mission: {missionName}
           </Typography>
-          <Typography
-            align="center"
-            variant="subtitle1"
-            gutterBottom
-            component="p"
-          >
+          <Typography variant="subtitle1" gutterBottom component="p">
             Rocket: <strong>{rocket && rocket.rocket_name}</strong>
           </Typography>
-          <Typography align="center" gutterBottom component="p" paragraph>
+          <Typography gutterBottom component="p" paragraph>
             Launch:
             <strong>{` ${moment(launchDateUtc).format(
               'MMMM Do YYYY, h:mm:ss',
