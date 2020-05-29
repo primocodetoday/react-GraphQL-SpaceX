@@ -38,7 +38,7 @@ const MissionCard = ({ launch }) => {
 
   // przekierowanie na stronę przedmiotu
   if (isRedirect.redirect) {
-    return <Redirect to={`/mission/${id}`} />;
+    return <Redirect push to={`/mission/${id}`} />;
   }
   return (
     <Grid item xs={12} sm={6} md={4}>

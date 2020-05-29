@@ -21,7 +21,7 @@ const Root = () => {
               path="/"
               render={() => <Redirect to="/pastmissions" />}
             />
-            <Route exact path="/pastmissions" component={PastMissions} />
+            <Route path="/pastmissions" component={PastMissions} />
             <Route path="/mission/:id" component={MissionTemplate} />
             <Route path="/incomingmissions" component={IncomingMissions} />
           </Switch>
