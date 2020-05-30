@@ -58,7 +58,7 @@ const MissionCard = ({ launch }) => {
               Rocket: {rocket.rocket_name}
             </Typography>
             <Typography variant="body1" color="textSecondary" component="p">
-              Launch: {moment(launchDateUtc).startOf('day').fromNow()}
+              Launch: {moment.utc(launchDateUtc).startOf('hour').fromNow()}
             </Typography>
           </CardContent>
         </CardActionArea>

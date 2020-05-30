@@ -35,7 +35,7 @@ const BottomSection = styled(Grid)`
 
 const BadgeSection = styled.section`
   padding: 20px;
-  width: 250px;
+  width: 230px;
   flex-shrink: 0;
 
   img {
@@ -50,6 +50,11 @@ const InfoSection = styled.section`
 
   @media (max-width: 900px) {
     align-items: center;
+
+    p,
+    h4 {
+      text-align: center;
+    }
   }
 `;
 
@@ -88,9 +93,9 @@ const MissionTemplate = (ownProps) => {
           </Typography>
           <Typography gutterBottom component="p" paragraph>
             Launch:
-            <strong>{` ${moment(launchDateUtc).format(
-              'MMMM Do YYYY, h:mm:ss',
-            )} UTC`}</strong>
+            <strong>{` ${moment
+              .utc(launchDateUtc)
+              .format('YYYY Do MMMM, h:mm:ss a')} UTC`}</strong>
           </Typography>
           <Typography
             align="justify"
