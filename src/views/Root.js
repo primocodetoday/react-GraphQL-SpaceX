@@ -1,5 +1,5 @@
 ﻿import React from 'react';
-import ApolloClient from 'apollo-boost';
+import { ApolloClient } from '@apollo/client';
 import { ApolloProvider } from '@apollo/react-hooks';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import PastMissions from './PastMissions';
