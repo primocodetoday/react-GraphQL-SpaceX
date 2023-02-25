@@ -1,6 +1,5 @@
 ﻿import React from 'react';
-import ApolloClient from 'apollo-boost';
-import { ApolloProvider } from '@apollo/react-hooks';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import PastMissions from './PastMissions';
 import IncomingMissions from './IncomingMissions';
@@ -9,7 +8,8 @@ import MainTemplate from '../templates/MainTemplate';
 
 const Root = () => {
   const client = new ApolloClient({
-    uri: 'https://api.spacex.land/graphql',
+    uri: 'https://spacex-production.up.railway.app/',
+    cache: new InMemoryCache(),
   });
   return (
     <ApolloProvider client={client}>
