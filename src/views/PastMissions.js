@@ -1,5 +1,5 @@
 ﻿import React from 'react';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/client';
 import { Grid } from '@material-ui/core';
 import { GET_PAST_MISSIONS } from '../graphql/get-past-missions';
 import MissionCard from '../components/molecules/MissionCard';

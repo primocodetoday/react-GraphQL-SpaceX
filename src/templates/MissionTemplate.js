@@ -2,7 +2,7 @@
 import styled from 'styled-components';
 import moment from 'moment';
 import { Card, Typography, Grid } from '@material-ui/core';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/client';
 import MissionLinks from '../components/molecules/MissionLinks';
 import { GET_MISSION_BYID } from '../graphql/get-mission-byId';
 import spaceX from '../assets/spacex_wall.webp';
